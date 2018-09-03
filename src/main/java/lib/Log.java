@@ -23,19 +23,14 @@ public class Log extends BaseLog implements Comparable<Log> {
         return o != null ? source.compareTo(o.source) : -1;
     }
 
-    public static class Builder extends BaseLog.BaseBuilder<Log, Builder>{
+    public static class Builder extends BaseLog.BaseBuilder<Log>{
         protected String source;
 
         public Builder setSource(String source) {
             this.source = source;
-            return self();
-        }
-
-
-        @Override
-        protected Builder self() {
             return this;
         }
+
 
         @Override
         public Log build() {

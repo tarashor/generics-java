@@ -11,15 +11,13 @@ public abstract class BaseLog {
         return message;
     }
 
-    public abstract static class BaseBuilder<T extends BaseLog, S extends BaseBuilder<T, S>>{
+    public abstract static class BaseBuilder<T extends BaseLog>{
         protected String message;
 
-        public S setMessage(String message){
+        public BaseBuilder<T> setMessage(String message){
             this.message = message;
-            return self();
+            return this;
         }
-
-        protected abstract S self();
 
         public abstract T build();
     }
